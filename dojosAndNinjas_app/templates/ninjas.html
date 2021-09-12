@@ -18,6 +18,7 @@
                     <div class="form-group">
                         <label for="dojo_id">Dojo:</label>
                         <select name="dojo_id">
+                            <option disabled selected>--Select Dojo--</option>
                         {% for dojo in dojos_all %}
                             <option value="{{ dojo.id }}">{{ dojo.name }}</option>
                         {% endfor %}
