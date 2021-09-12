@@ -1,5 +1,5 @@
 from dojosAndNinjas_app.config.mysqlconnection import connectToMySQL
-from dojosAndNinjas_app.models.ninja import Ninja
+from dojosAndNinjas_app.models import ninja
 
 class Dojo:
     def __init__( self, data ):
@@ -29,7 +29,7 @@ class Dojo:
         query = "SELECT * FROM dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id WHERE dojos.id = %(id)s ;"
         results = connectToMySQL("dojosAndNinjas_schema").query_db( query, data )
 
-        dojo = cls( results[0])
+        dojo = cls(results[0])
 
         for row in results:
             data = {

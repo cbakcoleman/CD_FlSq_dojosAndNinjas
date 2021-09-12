@@ -5,9 +5,7 @@ from dojosAndNinjas_app.models.dojo import Dojo
 
 @app.route("/ninjas")
 def ninjas():
-    print("TEST1")
     dojos_all = Dojo.get_all()
-    print("TEST2")
     return render_template("ninjas.html", dojos_all = dojos_all)
 
 @app.route("/add_ninja", methods=["POST"])
@@ -19,5 +17,7 @@ def add_ninja():
         "age" : request.form["age"]
     }
     new_ninja = Ninja.add_ninja( data )
+    
     return redirect("/dojos")
+    
     

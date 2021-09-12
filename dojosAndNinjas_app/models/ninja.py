@@ -1,5 +1,5 @@
 from dojosAndNinjas_app.config.mysqlconnection import connectToMySQL
-from dojosAndNinjas_app.models.dojo import Dojo
+from dojosAndNinjas_app.models import dojo
 
 class Ninja:
     def __init__( self, data ):
@@ -9,8 +9,8 @@ class Ninja:
         self.age= data["age"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
-        self.dojo_id = data["dojo_id"]
-        self.dojo = None
+        #self.dojo_id = data["dojo_id"]
+        #self.dojo = None
 
     @classmethod
     def add_ninja( cls, data ):
