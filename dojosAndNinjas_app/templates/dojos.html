@@ -32,7 +32,7 @@
                     <div class="card-body">
                     {% for dojo in dojos_all %}
                         <div>
-                            <p>{{ dojo.name }}</p>
+                            <a href="/dojo_ind/{{ dojo.id }}"><p>{{ dojo.name }}</p></a>
                         </div>
                     {% endfor %}
 

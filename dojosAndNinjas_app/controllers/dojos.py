@@ -17,3 +17,8 @@ def dojos():
     else:
         dojos_all = Dojo.get_all()
         return render_template("dojos.html", dojos_all = dojos_all)
+
+@app.route("/ind_dojo/<int:id>")
+def dojo_ind(id):
+    dojo = Dojo.dojo_ind({"id" : id })
+    return render_template("dojo_ind.html", dojo = dojo)
