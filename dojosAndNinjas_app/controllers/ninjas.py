@@ -17,7 +17,6 @@ def add_ninja():
         "age" : request.form["age"]
     }
     new_ninja = Ninja.add_ninja( data )
-    
-    return redirect("/dojos")
+    return redirect(f"/dojo_ind/{request.form['dojo_id']}")
     
     
